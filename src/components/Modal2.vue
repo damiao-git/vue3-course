@@ -1,12 +1,12 @@
 <template>
-    <div class="backdrop" @click.self="closeModal">  <!-- .self -> click only work in this element, not in child elements -->
+    <div class="backdrop" @click.self="closeModal2">  <!-- .self -> click only work in this element, not in child elements -->
         <div class="modal" :class="{sale: theme === 'sale'}"> 
             <!-- Conditional for add sale class for this element if theme === 'sale'-->
              <slot>
                 Empty slot <!-- if slot dont have content show this content-->
              </slot>
              <div class="actions">
-                <slot name="links"></slot>
+                <slot name="potatos"></slot>
              </div>
         </div>
     </div>
@@ -16,8 +16,8 @@
 export default{
     props: ['theme'],
     methods: {
-        closeModal(){
-            this.$emit('close') // this comando emits an envent named "close" to parent component
+        closeModal2(){
+            this.$emit('close2') // this comando emits an envent named "close" to parent component
         }
     }
 }
