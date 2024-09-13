@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop">
+    <div class="backdrop" @click="closeModal">
         <div class="modal" :class="{sale: theme === 'sale'}"> 
             <!-- Conditional for add sale class for this element if theme === 'sale'-->
             <h1>{{header}}</h1>
@@ -11,6 +11,11 @@
 <script>
 export default{
     props: ['header', 'text', 'theme'],
+    methods: {
+        closeModal(){
+            this.$emit('close') // this comando emits an envent named "close" to parent component
+        }
+    }
 }
 </script>
 <style>
